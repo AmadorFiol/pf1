@@ -33,16 +33,17 @@ public class DroneController : MonoBehaviour
     }
     private void TakeDamage(float damage)
     {
-        if (_health == 0)
-        {
-            Destroy(this.gameObject);
-        }
         if (damage > _health)
         {
             _health = 0;
         } else if (damage <= _health)
         {
             _health -= damage;
+        }
+        
+        if (_health == 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 }
